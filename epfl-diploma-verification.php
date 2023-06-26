@@ -40,7 +40,6 @@ function call_web_service($prenom, $nom, $diplome){
 
     // Serialize the form data
     $serializedData = http_build_query($formData);
-
     // Construct the URL with query parameters
     $urlWithParams = $apiUrl . '?' . $serializedData;
     echo $urlWithParams;
@@ -53,65 +52,53 @@ function call_web_service($prenom, $nom, $diplome){
 
     // Execute the cURL request
     $response = curl_exec($curl);
-
-    echo "  xcvxcvxcv " .$response;
+    $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
     // Check for cURL errors
-    if ($response === false) {
+    if ($httpCode === 200) {
+        // Process the response
+        $json = json_decode($response, true);
+
+        curl_close($curl);
+        ?>
+        <div id="success" class="row">
+            <div class="status-success col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3>Authenticity confirmed</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5"><label>Graduate’s Name</label></div>
+                    <div id="r-nom" class="col-lg-7"><?php $json[0].['fullName'] ?></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5"><label>Document Number</label></div>
+                    <div id="r-diplome" class="col-lg-7"><?php $json[0].['numero'] ?></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5"><label>Document Title</label></div>
+                    <div id="r-titre" class="col-lg-7"><?php $json[0].['title'] ?></div>
+                </div>
+            </div>
+        </div>
+        <?php
+    }else{
         $error = curl_error($curl);
         curl_close($curl);
         die('cURL error: ' . $error);
 
         ?>
         <div id="failure" class="row">
-                <div class="status-failure col-lg-12">
-                    <h3>Unable to verify document</h3>
-                    <div class="row">
-                        <div class="col-lg-12">Please contact the <a href="https://studying.epfl.ch/student_desk">Student Services Desk</a></div>
-                    </div>
+            <div class="status-failure col-lg-12">
+                <h3>Unable to verify document</h3>
+                <div class="row">
+                    <div class="col-lg-12">Please contact the <a href="https://studying.epfl.ch/student_desk">Student Services Desk</a></div>
                 </div>
             </div>
-        <?php
-    }else{
-        ?>
-            <div id="success" class="row">
-                <div class="status-success col-lg-12">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h3>Authenticity confirmed</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-5"><label>Graduate’s Name</label></div>
-                        <div id="r-nom" class="col-lg-7"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-5"><label>Document Number</label></div>
-                        <div id="r-diplome" class="col-lg-7"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-5"><label>Document Title</label></div>
-                        <div id="r-titre" class="col-lg-7"></div>
-                    </div>
-                </div>
-            </div>
+        </div>
         <?php
     }
-
-    // Close cURL
-    curl_close($curl);
-
-    // Process the response
-    $result = json_decode($response, true);
-
-    // Check if the response was successfully parsed
-    if ($result === null) {
-        die('Error decoding JSON response');
-    }
-
-    // Use the result
-    var_dump($result);
-
 }
 
 add_shortcode('epfl_diploma_verification', 'epfl_diploma_verification_process_shortcode');
