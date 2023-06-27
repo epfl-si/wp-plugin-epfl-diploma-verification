@@ -1,0 +1,29 @@
+.dip-form {
+    margin-top: 20px;
+}
+
+.status-success {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f5fff5;
+    background-repeat: no-repeat;
+    background-image: url('https://www.epfl.ch/education/studies/wp-content/uploads/2019/02/sceau-vector2.png');
+    background-position: top left;
+}
+
+.status-failure {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #A80E17;
+    color: white;
+}
+
+.status-failure a {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid white;
+}
+
+.status-failure a:hover {
+    border-bottom: 1px solid red;
+}

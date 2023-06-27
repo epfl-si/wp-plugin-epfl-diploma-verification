@@ -12,6 +12,10 @@ function epfl_diploma_verification_process_shortcode()
 {
     ob_start(); // Start output buffering
     // Check if the form is submitted and process the data
+
+    /* Including CSS file*/
+    wp_enqueue_style( 'epfl_diploma_verification_style', plugin_dir_url(__FILE__).'css/styles.css', [], '2.1');
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $prenom = $_POST["prenom"];
         $nom = $_POST["nom"];
@@ -42,7 +46,7 @@ function call_web_service($prenom, $nom, $diplome){
     $serializedData = http_build_query($formData);
     // Construct the URL with query parameters
     $urlWithParams = $apiUrl . '?' . $serializedData;
-    echo $urlWithParams;
+    //echo $urlWithParams;
 
     // Initialize cURL
     $curl = curl_init();
@@ -57,7 +61,7 @@ function call_web_service($prenom, $nom, $diplome){
     // Check for cURL errors
     if ($httpCode === 200) {
         // Process the response
-        $json = json_decode($response, true);
+        $data = json_decode($response, true);
 
         curl_close($curl);
         ?>
@@ -70,23 +74,23 @@ function call_web_service($prenom, $nom, $diplome){
                 </div>
                 <div class="row">
                     <div class="col-lg-5"><label>Graduate’s Name</label></div>
-                    <div id="r-nom" class="col-lg-7"><?php $json[0].['fullName'] ?></div>
+                    <div id="r-nom" class="col-lg-7"><?php echo $data[0]['fullName'] ?></div>
                 </div>
                 <div class="row">
                     <div class="col-lg-5"><label>Document Number</label></div>
-                    <div id="r-diplome" class="col-lg-7"><?php $json[0].['numero'] ?></div>
+                    <div id="r-diplome" class="col-lg-7"><?php echo $data[0]['numero'] ?></div>
                 </div>
                 <div class="row">
                     <div class="col-lg-5"><label>Document Title</label></div>
-                    <div id="r-titre" class="col-lg-7"><?php $json[0].['title'] ?></div>
+                    <div id="r-titre" class="col-lg-7"><?php echo $data[0]['title'] ?></div>
                 </div>
             </div>
         </div>
         <?php
     }else{
-        $error = curl_error($curl);
+        //$error = curl_error($curl);
         curl_close($curl);
-        die('cURL error: ' . $error);
+        //die('cURL error: ' . $error);
 
         ?>
         <div id="failure" class="row">
