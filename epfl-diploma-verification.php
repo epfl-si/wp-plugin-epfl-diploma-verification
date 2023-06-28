@@ -8,18 +8,44 @@ License: Copyright (c) 2021 Ecole Polytechnique Federale de Lausanne, Switzerlan
 */
 
 function epfl_diploma_verification_process_shortcode()
-{
+{  
+    ob_start();
     wp_enqueue_style( 'epfl_diploma_verification_style', plugin_dir_url(__FILE__).'css/styles.css', [], '2.1');
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $prenom = $_POST["prenom"];
-        $nom = $_POST["nom"];
-        $diplome = $_POST["diplome"];
+        if (isset($_POST["prenom"])) 
+        {
+            $prenom = $_POST["prenom"];
+        } 
+        else 
+        {
+            $prenom = null;
+        }
+        if (isset($_POST["nom"])) 
+        {
+            $nom = $_POST["nom"];
+        } 
+        else 
+        {
+            $nom = null;
+        }
+        if (isset($_POST["diplome"])) 
+        {
+            $diplome = $_POST["diplome"];
+        } 
+        else 
+        {
+            $diplome = null;
+        }
 
         include('diploma_verification_form.php');
         call_web_service($prenom, $nom, $diplome);
+        return ob_get_clean();
     } else {
         include('diploma_verification_form.php');
+        $output = ob_get_contents();
+        ob_end_clean();
+        return $output;
     }
 }
 
@@ -89,4 +115,6 @@ function failure(){
     <?php
 }
 
-add_shortcode('epfl_diploma_verification', 'epfl_diploma_verification_process_shortcode');
+add_action( 'init', function() {
+    add_shortcode('epfl_diploma_verification', 'epfl_diploma_verification_process_shortcode');
+});
