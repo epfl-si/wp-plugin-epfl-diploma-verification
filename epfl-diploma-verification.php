@@ -1,9 +1,8 @@
 <?php
 /*
 Plugin Name:  EPFL Diploma Verification
-Plugin URI:   https://wp-httpd/rosa
 Description:  Provides a shortcode to display diploma validation form
-Version:      0.1
+Version:      1.0
 Author:       Rosa Maggi
 License: Copyright (c) 2021 Ecole Polytechnique Federale de Lausanne, Switzerland
 */
