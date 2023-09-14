@@ -45,31 +45,10 @@ function epfl_diploma_verification_process_shortcode($atts)
 
     wp_enqueue_style( 'epfl_diploma_verification_style', plugin_dir_url(__FILE__).'css/styles.css', [], '2.1');
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (isset($_POST["prenom"])) 
-        {
-            $prenom = $_POST["prenom"];
-        } 
-        else 
-        {
-            $prenom = null;
-        }
-        if (isset($_POST["nom"])) 
-        {
-            $nom = $_POST["nom"];
-        } 
-        else 
-        {
-            $nom = null;
-        }
-        if (isset($_POST["diplome"])) 
-        {
-            $diplome = $_POST["diplome"];
-        } 
-        else 
-        {
-            $diplome = null;
-        }
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		$prenom = $_POST["prenom"] ?? null;
+		$nom = $_POST["nom"] ?? null;
+		$diplome = $_POST["diplome"] ?? null;
 
         include('diploma_verification_form.php');
         call_web_service($prenom, $nom, $diplome, $labels);
