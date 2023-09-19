@@ -1,0 +1,62 @@
+# Copyright (C) 2023 EPFL IDEV-FSD
+# This file is distributed under the same license as the EPFL Diploma Verification plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: EPFL Diploma Verification 0.1.7\n"
+"Report-Msgid-Bugs-To: https://github.com/wp-cli/i18n-command/issues\n"
+"Language-Team: EPFL ISAS-FSD <https://github.com/epfl-si/wp-plugin-epfl-diploma-verification>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-02-27T14:50:39+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: epfl-diploma-verification\n"
+
+#. Name of the student
+msgid "graduateName"
+msgstr ""
+
+#. First name of the student
+msgid "graduateFirstName"
+msgstr ""
+
+#. Surname of the student
+msgid "graduateSurname"
+msgstr ""
+
+#. Document number
+msgid "documentNumber"
+msgstr ""
+
+#. First name of the student
+msgid "graduateFirstNamePlaceHolder"
+msgstr ""
+
+#. Surname of the student
+msgid "graduateSurnamePlaceHolder"
+msgstr ""
+
+#. Document number
+msgid "documentNumberPlaceHolder"
+msgstr ""
+
+#. Validate button label
+msgid "validate"
+msgstr ""
+
+#. Document title
+msgid "documentTitle"
+msgstr ""
+
+#. Error message title
+msgid "error"
+msgstr ""
+
+#. Error message
+msgid "errorMessage"
+msgstr ""
+
+#. Authenticity confirmed
+msgid "authenticationConfirmed"
+msgstr ""
