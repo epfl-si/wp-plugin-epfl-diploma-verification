@@ -4,9 +4,9 @@
  * Description:  Provides a shortcode to display diploma validation form
  * Version:      1.0.2
  * Author:       Rosa Maggi
- * License: Copyright (c) 2021 Ecole Polytechnique Federale de Lausanne, Switzerland
- * Text Domain: epfl-diploma-verification
- * Domain Path: /languages
+ * License: 	 Copyright (c) 2021 Ecole Polytechnique Federale de Lausanne, Switzerland
+ * Text Domain:  epfl-diploma-verification
+ * Domain Path:  /languages
  */
 
 function epfl_diploma_verification_process_shortcode()
@@ -65,7 +65,7 @@ function success($data)
 		<div class="status-success col-lg-12">
 			<div class="row">
 				<div class="col-lg-12">
-					<h3><label><?php echo _e('authenticationConfirmed','epfl-diploma-verification'); ?></label></h3>
+					<h3><label><?php _e('authenticationConfirmed','epfl-diploma-verification'); ?></label></h3>
 				</div>
 			</div>
 			<div class="row">
@@ -73,11 +73,11 @@ function success($data)
 				<div id="r-nom" class="col-lg-7"><?php echo $data[0]['fullName'] ?></div>
 			</div>
 			<div class="row">
-				<div class="col-lg-5"><label><?php echo _e('documentNumber','epfl-diploma-verification'); ?></label></div>
+				<div class="col-lg-5"><label><?php _e('documentNumber','epfl-diploma-verification'); ?></label></div>
 				<div id="r-diplome" class="col-lg-7"><?php echo $data[0]['numero'] ?></div>
 			</div>
 			<div class="row">
-				<div class="col-lg-5"><label><?php echo _e('documentTitle','epfl-diploma-verification'); ?></label></div>
+				<div class="col-lg-5"><label><?php _e('documentTitle','epfl-diploma-verification'); ?></label></div>
 				<div id="r-titre" class="col-lg-7"><?php echo $data[0]['title'] ?></div>
 			</div>
 		</div>
@@ -90,9 +90,9 @@ function failure()
 	?>
 	<div id="failure" class="row">
 		<div class="status-failure col-lg-12">
-			<h3><?php echo _e('error','epfl-diploma-verification'); ?></h3>
+			<h3><?php _e('error','epfl-diploma-verification'); ?></h3>
 			<div class="row">
-				<div class="col-lg-12"><?php echo _e('errorMessage','epfl-diploma-verification'); ?></div>
+				<div class="col-lg-12"><?php _e('errorMessage','epfl-diploma-verification'); ?></div>
 			</div>
 		</div>
 	</div>
