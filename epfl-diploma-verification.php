@@ -2,7 +2,7 @@
 /*
  * Plugin Name:  EPFL Diploma Verification
  * Description:  Provides a shortcode to display diploma validation form
- * Version:      1.0.2
+ * Version:      1.0.3
  * Author:       Rosa Maggi
  * License: 	 Copyright (c) 2021 Ecole Polytechnique Federale de Lausanne, Switzerland
  * Text Domain:  epfl-diploma-verification
@@ -69,16 +69,20 @@ function success($data)
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-5"><label><?php _e('graduateName', 'epfl-diploma-verification'); ?></label></div>
-				<div id="r-nom" class="col-lg-7"><?php echo $data[0]['fullName'] ?></div>
+				<div class="col-lg-4"><label><?php _e('graduateName', 'epfl-diploma-verification'); ?></label></div>
+				<div id="r-nom" class="col-lg-8"><?php echo $data[0]['fullName'] ?></div>
 			</div>
 			<div class="row">
-				<div class="col-lg-5"><label><?php _e('documentNumber','epfl-diploma-verification'); ?></label></div>
-				<div id="r-diplome" class="col-lg-7"><?php echo $data[0]['numero'] ?></div>
+				<div class="col-lg-4"><label><?php _e('documentNumber','epfl-diploma-verification'); ?></label></div>
+				<div id="r-diplome" class="col-lg-8"><?php echo $data[0]['numero'] ?></div>
 			</div>
 			<div class="row">
-				<div class="col-lg-5"><label><?php _e('documentTitle','epfl-diploma-verification'); ?></label></div>
-				<div id="r-titre" class="col-lg-7"><?php echo $data[0]['title'] ?></div>
+				<div class="col-lg-4"><label><?php _e('documentTitle','epfl-diploma-verification'); ?></label></div>
+				<div id="r-titre_EDOC" class="col-lg-8" style="display:  <?php echo ($data[0]['qualification']=='EDOC' ? 'unset' : 'none') ?>">
+					<div>Docteur ès Sciences</div>
+					<div style="font-size: small"><?php echo $data[0]['title'] ?></div>
+				</div>
+				<div id="r-titre_PDM" class="col-lg-8" style="display:  <?php echo ($data[0]['qualification']=='EDOC' ? 'none' : 'unset') ?>"><?php echo $data[0]['title'] ?></div>
 			</div>
 		</div>
 	</div>
