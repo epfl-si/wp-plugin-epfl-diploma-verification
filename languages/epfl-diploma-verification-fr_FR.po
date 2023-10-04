@@ -1,0 +1,63 @@
+# Copyright (C) 2023 EPFL IDEV-FSD
+# This file is distributed under the same license as the EPFL Diploma Verification plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: EPFL Diploma Verification 0.1.7\n"
+"Report-Msgid-Bugs-To: https://github.com/wp-cli/i18n-command/issues\n"
+"POT-Creation-Date: 2023-09-15 15:10+0200\n"
+"PO-Revision-Date: 2023-09-15 15:11+0200\n"
+"Last-Translator: \n"
+"Language-Team: EPFL ISAS-FSD <https://github.com/epfl-si/wp-plugin-epfl-diploma-verification>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: epfl-diploma-verification\n"
+
+#. Name of the student
+msgid "graduateName"
+msgstr "Nom du diplômé"
+
+#. First name of the student
+msgid "graduateFirstName"
+msgstr "Prénom du diplômé"
+
+#. Surname of the student
+msgid "graduateSurname"
+msgstr "Nom du diplômé"
+
+#. Document number
+msgid "documentNumber"
+msgstr "Numéro du diplôme"
+
+#. First name of the student
+msgid "graduateFirstNamePlaceHolder"
+msgstr "Prénom..."
+
+#. Surname of the student
+msgid "graduateSurnamePlaceHolder"
+msgstr "Nom..."
+
+#. Document number
+msgid "documentNumberPlaceHolder"
+msgstr "Numéro..."
+
+#. Validate button label
+msgid "validate"
+msgstr "Valider"
+
+#. Document title
+msgid "documentTitle"
+msgstr "Titre du document"
+
+#. Error message title
+msgid "error"
+msgstr "Impossible de vérifier le document"
+
+#. Error message
+msgid "errorMessage"
+msgstr "Merci de contacter le <a href=\"https://studying.epfl.ch/student_desk\">Guichet des étudiants</a>"
+
+#. Authenticity confirmed
+msgid "authenticationConfirmed"
+msgstr "Authenticité confirmée"
