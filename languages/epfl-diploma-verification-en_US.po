@@ -16,15 +16,15 @@ msgstr ""
 
 #. Name of the student
 msgid "graduateName"
-msgstr "Graduate’s Name"
+msgstr "Graduate’s Name(s)"
 
 #. First name of the student
 msgid "graduateFirstName"
-msgstr "Graduate’s First Name"
+msgstr "Graduate’s First Name(s)"
 
 #. Surname of the student
 msgid "graduateSurname"
-msgstr "Graduate’s Surname"
+msgstr "Graduate’s Surname(s)"
 
 #. Document number
 msgid "documentNumber"
@@ -32,11 +32,11 @@ msgstr "Document Number"
 
 #. First name of the student
 msgid "graduateFirstNamePlaceHolder"
-msgstr "First name..."
+msgstr "First name(s)..."
 
 #. Surname of the student
 msgid "graduateSurnamePlaceHolder"
-msgstr "Surname..."
+msgstr "Surname(s)..."
 
 #. Document number
 msgid "documentNumberPlaceHolder"

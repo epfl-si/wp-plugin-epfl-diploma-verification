@@ -2,7 +2,7 @@
 /*
  * Plugin Name:  EPFL Diploma Verification
  * Description:  Provides a shortcode to display diploma validation form
- * Version:      1.0.4
+ * Version:      1.0.5
  * Author:       Rosa Maggi
  * License: 	 Copyright (c) 2021 Ecole Polytechnique Federale de Lausanne, Switzerland
  * Text Domain:  epfl-diploma-verification
