@@ -55,7 +55,6 @@ function call_web_service($prenom, $nom, $diplome)
 	} else {
 		failure();
 	}
-	curl_close($curl);
 }
 
 function success($data)
